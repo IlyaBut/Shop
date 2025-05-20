@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Каталог{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="header">
+      <h1>Каталог</h1>
+    </div>
+
+    <div class="sort-block">
+      <span class="sort-item">Сортировать по:</span>
+      <a class="sort-item" href="?sort=name">названию</a>
+      <a class="sort-item" href="?sort=min_price">начиная с дешёвых</a>
+      <a class="sort-item" href="?sort=max_price">начиная с дорогих</a>
+    </div>
+
+    <div class="content">
+      {% for book in books %}
+        <div class="book">
+            <a href="{% url 'details' book_id=book.id %}"><h3>{{ book.title }}</h3></a>
+          </a>
+          <div class="price">Стоимость: {{ book.price }} ₽</div>
+          <img height="400" src="{{ book.image.url }}" alt="{{ book.title }}"/>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
