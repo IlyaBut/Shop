@@ -32,3 +32,5 @@ def details(request, book_id):
     except Book.DoesNotExist:
         raise Http404("Товар не найден")
 
+def hello(request):
+    return HttpResponse("TEST_CI/CD")
