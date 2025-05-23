@@ -33,4 +33,4 @@ def details(request, book_id):
         raise Http404("Товар не найден")
 
 def hello(request):
-    return HttpResponse("TEST_CI/CD")
+    return HttpResponse("TEST_CI/CD, try_2")
