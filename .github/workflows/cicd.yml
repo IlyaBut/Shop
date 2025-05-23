@@ -30,6 +30,7 @@ jobs:
                 username: root
                 password: Es4gPcCspEE1F5ed
                 script: |
+                    su - ilya
                     cd /Shop/main
                     git pull
                     sudo systemctl restart gunicorn
