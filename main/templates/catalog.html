@@ -21,9 +21,8 @@
       {% for book in books %}
         <div class="book">
             <a href="{% url 'details' book_id=book.id %}"><h3>{{ book.title }}</h3></a>
-          </a>
           <div class="price">Стоимость: {{ book.price }} ₽</div>
-          <img height="400" src="{{ book.image.url }}" alt="{{ book.title }}"/>
+          <img height="250" src="{{ book.image.url }}" alt="{{ book.title }}"/>
         </div>
       {% endfor %}
     </div>

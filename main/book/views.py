@@ -31,3 +31,4 @@ def details(request, book_id):
         return render(request, template_name, {"book": book})
     except Book.DoesNotExist:
         raise Http404("Товар не найден")
+
